@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://deklnvwsnrwkp"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_4vu7p"]
-[ext_resource type="Script" path="res://Player/Pivote.gd" id="1_i7g2x"]
 [ext_resource type="PackedScene" uid="uid://dqrctdldscnb4" path="res://GodotActionRPG-Assets/Models/Sword.dae" id="1_nltru"]
+[ext_resource type="Script" path="res://Player/Pivote.gd" id="2_nqx03"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_syile"]
 
@@ -21,7 +21,7 @@ shape = SubResource("CapsuleShape3D_vi3ki")
 
 [node name="Pivote" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_i7g2x")
+script = ExtResource("2_nqx03")
 
 [node name="Camera3D" type="Camera3D" parent="Pivote"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1, -5)

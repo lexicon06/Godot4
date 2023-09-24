@@ -7,14 +7,11 @@ var damage : int = 1
 var gold : int = 0
 
 var attackRate : float = .3
-var lastAttackTime : int= 0
+var lastAttackTime : int = 0
 
-var moveSpeed : float = 15.0
+var moveSpeed : float = 5.0
 var jumpForce : float = 10.0
 var gravity : float = 15.0
-
-@onready var camera = $Pivote 
-@onready var attackCast = $AttackRayCast3D
 
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
@@ -47,5 +44,3 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jumpForce
 	
 	move_and_slide()
-
-	
