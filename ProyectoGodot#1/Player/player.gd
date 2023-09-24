@@ -1,31 +1,44 @@
 extends CharacterBody3D
 
+var curHp: int = 10
+var maxHP: int = 10
+var damage: int = 1
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var gold: int = 0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var attackRate: float = .3
+var lastAttackTime: int = 0
 
+var moveSpeed: float = 5.0
+var jumpForce: float = 10.0
+var gravity: float = 15.0
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+@onready var camera = $Pivote
+@onready var attackCast = $AttackRayCast3D
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _physics_process(delta: float) -> void:
+	var input = Vector3()
+	
+	if Input.is_action_pressed("ui_up"):
+		input.z += 1
+	if Input.is_action_pressed("ui_down"):
+		input.z -= 1
+	if Input.is_action_pressed("ui_left"):
+		input.x += 1
+	if Input.is_action_pressed("ui_right"):
+		input.x -= 1
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	input = input.normalized()
 
+	var dir = (transform.basis.z * input.z + transform.basis.x * input.x)
+
+	velocity.x = dir.x * moveSpeed
+	velocity.z = dir.z * moveSpeed
+
+	velocity.y -= gravity * delta
+
+	if Input.is_action_pressed("ui_accept") and is_on_floor():
+		velocity.y = jumpForce
+
+	self.velocity = velocity
 	move_and_slide()

@@ -15,6 +15,10 @@ script = ExtResource("1_4vu7p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_syile")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_vi3ki")
+
 [node name="Pivote" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_i7g2x")
@@ -32,7 +36,3 @@ transform = Transform3D(-4.63629e-09, 4.63629e-09, 0.15, 0.106066, 0.106066, 0, 
 [node name="AttackRayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1, 0.6)
 target_position = Vector3(0, -1, 1.5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_vi3ki")
