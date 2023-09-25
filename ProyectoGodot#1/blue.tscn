@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r5v3rr7t0eo2"]
+
+[ext_resource type="PackedScene" uid="uid://2xaaolkll7q7" path="res://GodotActionRPG-Assets/Models/blue.glb" id="1_nsun2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxywa"]
+
+[node name="blue" instance=ExtResource("1_nsun2")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Icosphere" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Icosphere/StaticBody3D" index="0"]
+transform = Transform3D(1.75478, 0, 0, 0, 1.84581, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_cxywa")

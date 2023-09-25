@@ -10,8 +10,8 @@ var attackRate : float = .3
 var lastAttackTime : int= 0
 
 var moveSpeed : float = 15.0
-var jumpForce : float = 10.0
-var gravity : float = 15.0
+var jumpForce : float = 15.0
+var gravity : float = 30.0
 
 @onready var camera = $Pivote 
 @onready var attackCast = $AttackRayCast3D
