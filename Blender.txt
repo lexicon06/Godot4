@@ -1,0 +1,3 @@
+It is highly recommended to export your assets as glTF 2.0 for godot
+About: https://docs.blender.org/manual/es/2.91/addons/import_export/scene_gltf2.html
+Drag the asset to res and right click it then make new inherited scene then you can mess with it

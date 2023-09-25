@@ -210,40 +210,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.66, -8.82166, -68.4702)
 mesh = ExtResource("3_kcx4f")
 skeleton = NodePath("../..")
 
-[node name="NaturePack017" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9841, -8.82167, -77.1547)
+[node name="NaturePack031" type="MeshInstance3D" parent="Tree Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.737, -8.82167, -77.1547)
 mesh = ExtResource("6_jbtpo")
-
-[node name="NaturePack019" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 5, -22.9865, -8.82167, -72.8513)
-mesh = ExtResource("2_1y4hq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack019"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack019/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_i8n6w")
-
-[node name="NaturePack018" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.93176, -8.82167, -14.9966)
-mesh = ExtResource("8_mexuq")
-
-[node name="NaturePack020" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.639, -8.82167, -40.9429)
-mesh = ExtResource("6_jbtpo")
-
-[node name="NaturePack021" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0826, -8.82167, -53.4118)
-mesh = ExtResource("4_0isuy")
-
-[node name="Arbol Grande" type="MeshInstance3D" parent="NaturePack021"]
-transform = Transform3D(7, 0, 0, 0, 10, 0, 0, 0, 7, -9.46674, 0, 5.7117)
-mesh = ExtResource("3_kcx4f")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack021/Arbol Grande"]
+[node name="NaturePack032" type="MeshInstance3D" parent="Tree Models"]
+transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 5, 90.7665, -8.82167, -72.8513)
+mesh = ExtResource("2_1y4hq")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack021/Arbol Grande/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree Models/NaturePack032"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree Models/NaturePack032/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_i8n6w")
+
+[node name="NaturePack033" type="MeshInstance3D" parent="Tree Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.685, -8.82167, -14.9966)
+mesh = ExtResource("8_mexuq")
+skeleton = NodePath("../..")
+
+[node name="NaturePack034" type="MeshInstance3D" parent="Tree Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.392, -8.82167, -40.9429)
+mesh = ExtResource("6_jbtpo")
+skeleton = NodePath("../..")
+
+[node name="NaturePack035" type="MeshInstance3D" parent="Tree Models"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.836, -8.82167, -53.4118)
+mesh = ExtResource("4_0isuy")
+skeleton = NodePath("../..")
+
+[node name="Arbol Grande" type="MeshInstance3D" parent="Tree Models/NaturePack035"]
+transform = Transform3D(7, 0, 0, 0, 10, 0, 0, 0, 7, -9.46674, 0, 5.7117)
+mesh = ExtResource("3_kcx4f")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree Models/NaturePack035/Arbol Grande"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree Models/NaturePack035/Arbol Grande/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_r70wb")
 
 [node name="blue" parent="." instance=ExtResource("13_2et6i")]
